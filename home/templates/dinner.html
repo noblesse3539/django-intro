@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>오늘 저녁은 {{ dinner }}!!!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}저녁메뉴 추천{% endblock %}
+{% block body %}
+    <div>
+        <h1>저녁메뉴 추천</h1>
+        {% if dinner == '치킨' %}
+            <h1>오늘 저녁은 {{ dinner }}!!!</h1>
+        {% else %}
+            <h1>아........ {{ dinner }}...</h1>
+        {% endif %}
+    </div>
+    
+    <div>
+        <h1>모든 메뉴</h1>
+        {% for menu in box %}
+            <p>{{ menu }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}

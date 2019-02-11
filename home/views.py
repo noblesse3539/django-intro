@@ -13,4 +13,9 @@ def dinner(request):
     # 1) request, 2) template 파일(html)
     # render 선택인자
     # 3) dictionary : 템플릿에서 쓸 변수 값을 정의
-    return render(request, 'dinner.html', {'dinner': dinner})
+    my_dict = {
+        'dinner': dinner,
+        'box' : box,
+    }
+    return render(request, 'dinner.html', my_dict)
+    # template은 기본적으로 문밥이 jinja2랑 같지만, 장고에서는 DTL을 쓴다.
