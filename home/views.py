@@ -19,3 +19,8 @@ def dinner(request):
     }
     return render(request, 'dinner.html', my_dict)
     # template은 기본적으로 문밥이 jinja2랑 같지만, 장고에서는 DTL을 쓴다.
+def you(request, name):
+    return render(request, 'you.html', {'name': name})
+    
+def cube(request, num):
+    return render(request, 'cube.html', {'num': num**3 })
